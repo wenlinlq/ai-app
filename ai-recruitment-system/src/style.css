@@ -1,0 +1,330 @@
+@import "tailwindcss";
+
+/* ========================
+   校园风格配色系统 - 温暖柔和版
+   ======================== */
+:root {
+  /* 主色调 - 学院蓝 + 砖红 + 暖黄 + 墨绿 */
+  --color-navy: #1e3a5f;
+  --color-navy-light: #2d5a8a;
+  --color-navy-lighter: #3d7ab5;
+  --color-brick: #c0392b;
+  --color-brick-light: #e74c3c;
+  --color-gold: #f39c12;
+  --color-gold-light: #f1c40f;
+  --color-ink: #2c3e50;
+  --color-ink-light: #34495e;
+
+  /* 辅助色 - 墨绿 + 银杏 */
+  --color-forest: #1d6f42;
+  --color-forest-light: #27ae60;
+  --color-ginkgo: #e8d5a3;
+  --color-ginkgo-dark: #c9b896;
+
+  /* 中性色 - 温暖柔和 */
+  --color-bg: #faf8f5;
+  --color-bg-warm: #f5f0e8;
+  --color-bg-card: #ffffff;
+  --color-paper: #fffef9;
+  --color-text: #2c3e50;
+  --color-text-light: #5d6d7e;
+  --color-text-muted: #95a5a6;
+  --color-border: #e8e4dc;
+  --color-border-light: #f0ebe3;
+
+  /* 渐变色 */
+  --gradient-campus: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 50%, #1d6f42 100%);
+  --gradient-warm: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+  --gradient-sunset: linear-gradient(135deg, #c0392b 0%, #f39c12 50%, #f1c40f 100%);
+  --gradient-hero: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 40%, #3d7ab5 60%, #1d6f42 100%);
+
+  /* 阴影 - 更柔和 */
+  --shadow-sm: 0 1px 2px rgba(30, 58, 95, 0.04);
+  --shadow-md: 0 4px 12px rgba(30, 58, 95, 0.08);
+  --shadow-lg: 0 8px 24px rgba(30, 58, 95, 0.12);
+  --shadow-xl: 0 16px 48px rgba(30, 58, 95, 0.16);
+
+  /* 圆角 - 更柔和 */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ========================
+   自定义滚动条
+   ======================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ginkgo-dark);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* ========================
+   卡片样式 - 纸张质感 + 柔和阴影
+   ======================== */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: var(--color-border);
+}
+
+/* ========================
+   按钮样式 - 学院风 + 流畅动画
+   ======================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background: var(--color-navy);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-navy-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.25);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
+}
+
+.btn-secondary:hover {
+  background: var(--color-navy);
+  color: white;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  color: white;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(243, 156, 18, 0.35);
+}
+
+/* ========================
+   标签样式
+   ======================== */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  transform: scale(1.05);
+}
+
+.tag-blue {
+  background: rgba(30, 58, 95, 0.08);
+  color: var(--color-navy);
+}
+
+.tag-gold {
+  background: rgba(243, 156, 18, 0.12);
+  color: #d68910;
+}
+
+.tag-green {
+  background: rgba(29, 111, 66, 0.1);
+  color: var(--color-forest);
+}
+
+.tag-red {
+  background: rgba(192, 57, 43, 0.1);
+  color: var(--color-brick);
+}
+
+/* ========================
+   渐变文字
+   ======================== */
+.gradient-text {
+  background: var(--gradient-campus);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================
+   动画 - 流畅过渡
+   ======================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.4s ease-out forwards;
+}
+
+/* 交错动画延迟 */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+
+/* ========================
+   输入框样式
+   ======================== */
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-navy);
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+  background: white;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ========================
+   选中状态指示器
+   ======================== */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.online {
+  background: var(--color-forest-light);
+  box-shadow: 0 0 8px rgba(39, 174, 96, 0.5);
+  animation: pulse-soft 2s infinite;
+}
+
+/* ========================
+   装饰线
+   ======================== */
+.decoration-line {
+  position: relative;
+}
+
+.decoration-line::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 32px;
+  height: 3px;
+  background: var(--gradient-warm);
+  border-radius: 2px;
+}
+
+/* ========================
+   玻璃拟态效果
+   ======================== */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
